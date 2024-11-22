@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+html, body {
+  height: 100%;
+  background-color: #ffcc00;
+}
+
+a{
+  color: black !important;
+}
+
+.brand-logo, h2{
+  font-family: "Grand Hotel", cursive;
+}
+
+.mycard{
+  margin-top:30px;
+}
+
+.auth-card{
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #c669da !important;
+  box-shadow: 0 1px 0 0 #c669da !important;
+}
+
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid #c669da !important;
+  box-shadow: 0 1px 0 0 #c669da !important;
+}
+
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:"space-around"
+}
+
+.item{
+  width:30%;
+  margin: 7px 7px;
+}
+
+.home-card{
+  max-width: 600px;
+  height: max-content;
+  margin: 26px auto;
+  padding-top: 0.013px; #padding-top:0.012px look at space between name and top of card
+}
+
+#toast-container{
+  top: 30px !important;
+  right: 20px !important;
+  left:auto !important;
+}
+
+.material-icons:hover, .whole-icon:hover, .shell:hover{
+  cursor:pointer;
+}
+
+@font-face {
+  font-family: 'Super Mario';
+  src: url('./assets/Gamtex.ttf') format('truetype');
+}
+
+.mario-text {
+  font-family:'Super Mario', sans-serif;
+  color: #ffcc00;
+  text-shadow: 2px 2px 0 #1d1b1b, 4px 4px 0 #ff0000;
+}
+
+.mario-text2 {
+  font-family:'Super Mario', sans-serif;
+  font-size: 20px;
+}
+
+.mario-text3 {
+  font-family:'Super Mario', sans-serif;
+}
+
+.title {
+  font-size: 48px; /* Adjust the size as needed */
+}
+
+.comment-text{
+  color: purple;
+}
+
+.whole-icon {
+  display: inline-block;
+  width: 50px; 
+  height: 50px;
+  background-color: white;
+}
+
+.goomba {
+  height: 49px !important;
+  width: auto !important;
+}
+
+.mushroom {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+.thwomp {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+.rightThwomp{
+  float:right;
+  margin-right: 10px;
+  position: relative;
+  top: -14px;
+  height: 43px !important;
+}
+.shell{
+  width:25px;
+  margin-top:6px;
+}
+.footer {
+  color: #000;
+  text-align: center; 
+  padding-bottom: 10px;
+}
+
+.social-links a {
+  color: #000; 
+  text-decoration: none; 
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.postpic{
+  position: absolute;
+  height:40px;
+  top:5px;
+  border-radius: 50%;
+}
+
+.commentpic{
+  position: absolute;
+  height:20px;
+  top:-3px;
+  border-radius: 50%;
+  padding-right:5px;
+}
+
+.card-content{
+  margin-top:0px;
+  padding:8px 8px 16px 16px !important;
+}
+
+.toast {
+  font-family: 'Super Mario', sans-serif; /* Replace with your desired font family */
+}
