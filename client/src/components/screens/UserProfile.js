@@ -15,13 +15,12 @@ const UserProfile = ()=>{
             }
         }).then(res=>res.json())
         .then(result=>{
-            if(result.user.followers.includes(state._id)){
+            if(state && result.user.followers.includes(state._id)){
                 setShowFollow(false)
             }
             setProfile(result)
         })
-    },[])
-
+    },[userid])
     const followUser = ()=>{
         fetch('/follow',{
             method:"put",

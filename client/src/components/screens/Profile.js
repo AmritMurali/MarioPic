@@ -1,6 +1,7 @@
 import React,{useEffect,useState, useContext} from 'react'
 import {UserContext} from '../../App'
 import { useNavigate } from 'react-router-dom'
+import M from 'materialize-css'
 
 const Profile = ()=>{
     const [mypics,setPics]=useState([])
@@ -42,6 +43,7 @@ const Profile = ()=>{
                 .then(result=>{
                     localStorage.setItem("user",JSON.stringify({...state,pic:result.pic}))
                     dispatch({type:"UPDATEPIC",payload:result.pic})
+                    M.toast({html: "updated profile pic", classes:"#43a047 green darken-1"})
                 })
                 // window.location.reload()
             })
@@ -63,6 +65,7 @@ const Profile = ()=>{
             localStorage.clear()
             dispatch({type:"CLEAR"})
             history('/signin')
+            M.toast({html: "deleted account", classes:"#43a047 green darken-1"})
         })
     }
     return (

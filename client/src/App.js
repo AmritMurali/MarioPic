@@ -1,7 +1,7 @@
 import React,{useEffect,createContext,useReducer,useContext} from 'react'
 import NavBar from './components/Navbar'
 import "./App.css"
-import {BrowserRouter, Route, Routes, useNavigate} from 'react-router-dom'
+import {BrowserRouter, Route, Routes, useNavigate,useLocation} from 'react-router-dom'
 import Explore from './components/screens/Explore'
 import Signin from './components/screens/SignIn'
 import Profile from './components/screens/Profile'
@@ -9,6 +9,8 @@ import Signup from './components/screens/Signup'
 import CreatePost from './components/screens/CreatePost'
 import UserProfile from './components/screens/UserProfile'
 import Home from './components/screens/Home'
+import Reset from './components/screens/Reset'
+import NewPassword from './components/screens/NewPassword'
 import {reducer, initialState} from './reducers/userReducer'
 
 export const UserContext = createContext()
@@ -16,12 +18,14 @@ export const UserContext = createContext()
 const Routing = ()=>{
   const {state,dispatch} = useContext(UserContext)
   const history = useNavigate()
+  const location = useLocation()
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem("user"))
     if(user){
       dispatch({type:"USER",payload:user})
     } else{
-      history('/signin')
+      if(!location.pathname.startsWith('/reset'))
+        history('/signin')
     }
   },[])
   return(
@@ -33,6 +37,8 @@ const Routing = ()=>{
       <Route path="/profile" element={<Profile />} />
       <Route path="/create" element={<CreatePost />} />
       <Route path="/profile/:userid" element={<UserProfile />} />
+      <Route path="/reset" element={<Reset />} />
+      <Route path="/reset/:token" element={<NewPassword />} />
     </Routes>
   )
 }

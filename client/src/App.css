@@ -3,6 +3,10 @@
 html, body {
   height: 100%;
   background-color: #ffcc00;
+  overflow:auto !important;
+}
+body::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in Chrome, Safari, Edge */
 }
 
 a{
@@ -158,4 +162,17 @@ a{
 
 .toast {
   font-family: 'Super Mario', sans-serif; /* Replace with your desired font family */
+}
+
+.modal-content{
+  color: black !important;
+  font-family:'Super Mario'
+}
+
+.collection-item{
+  width:100%
+}
+
+#modal1{
+  width:45%
 }
